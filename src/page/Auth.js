@@ -18,22 +18,22 @@ const Auth = ({ setIsAuth }) => {
         signInWithPopup(auth, facebookProvider)
             .then(data => {
                 setIsAuth(true)
-                console.log(data)
-                localStorage.setItem("token", data.user.refreshToken)
+                localStorage.setItem("token", data.user.accessToken)
             })
     }
     const handleGithub = () => {
         signInWithPopup(auth, githubProvider)
             .then(data => {
                 setIsAuth(true)
-                localStorage.setItem("token", data.user.refreshToken)
+                console.log(data)
+                localStorage.setItem("token", data.user.accessToken)
             })
     }
     const handleTwitter = () => {
         signInWithPopup(auth, twitterProvider)
             .then(data => {
                 setIsAuth(true)
-                localStorage.setItem("token", data.user.refreshToken)
+                localStorage.setItem("token", data.user.accessToken)
             })
     }
 
